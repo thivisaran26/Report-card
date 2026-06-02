@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Confidential Student Record - Saravanan</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#0c0c0c,#1a1a1a,#2d1b00,#111111);
+color:white;
+overflow-x:hidden;
+}
+
+.page{
+display:none;
+min-height:100vh;
+padding:20px;
+justify-content:center;
+align-items:center;
+}
+
+.page.active{
+display:flex;
+}
+
+.card{
+width:100%;
+max-width:1100px;
+background:#111;
+border:2px solid rgba(255,215,0,.15);
+border-radius:25px;
+padding:35px;
+box-shadow:0 15px 40px rgba(0,0,0,.6);
+}
+
+.center{
+text-align:center;
+}
+
+h1,h2{
+color:#FFD700;
+margin-bottom:15px;
+}
+
+button{
+padding:14px 28px;
+background:#FFD700;
+color:#000;
+border:none;
+border-radius:12px;
+font-weight:bold;
+cursor:pointer;
+margin-top:20px;
+}
+
+input{
+padding:14px;
+width:280px;
+max-width:100%;
+border:none;
+border-radius:10px;
+margin-top:15px;
+}
+
+.book{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:25px;
+align-items:center;
+}
+
+.photo{
+height:500px;
+background:#0f172a;
+padding:10px;
+border-radius:20px;
+display:flex;
+justify-content:center;
+align-items:center;
+overflow:hidden;
+}
+
+.photo img{
+max-width:100%;
+max-height:100%;
+width:auto;
+height:auto;
+object-fit:contain;
+border-radius:15px;
+}
+
+.message{
+line-height:2;
+}
+
+@media(max-width:768px){
+
+.book{
+grid-template-columns:1fr;
+}
+
+.photo{
+height:320px;
+}
+
+.card{
+padding:20px;
+}
+
+h1{
+font-size:1.7rem;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<!-- COVER PAGE -->
+<div class="page active" id="cover">
+<div class="card center">
+
+<h1>📂 CONFIDENTIAL SCHOOL ARCHIVE</h1>
+
+<h2>Student Record File</h2>
+
+<h2>Mr. Saravanan 👨‍🏫</h2>
+
+<p>Teacher • Mentor • Father</p>
+
+<br>
+
+<p>Prepared by ❤️ Thivisha ❤️</p>
+
+<button onclick="showPage('password')">
+Open Archive
+</button>
+
+</div>
+</div>
+
+<!-- PASSWORD PAGE -->
+<div class="page" id="password">
+<div class="card center">
+
+<h1>🔒 Restricted Access</h1>
+
+<p>Enter Security Passcode</p>
+<p><B>Hint:Your Birthday[DDMM]</B></p>
+
+<input type="password" id="pass">
+
+<br>
+
+<button onclick="unlock()">
+Unlock File
+</button>
+
+</div>
+</div>
+
+<!-- CHAPTER 1 -->
+<div class="page" id="chapter1">
+<div class="card">
+
+<div class="book">
+
+<div class="photo">
+<img src="img 1.jpeg" alt="Photo 1">
+</div>
+
+<div class="message">
+
+<h1>📖 Chapter 1</h1>
+
+<h2>Dear Appa</h2>
+
+<p>
+
+Today is not just your birthday.
+
+<br><br>
+
+Today is a celebration of every lesson,
+every sacrifice,
+and every dream you helped build.
+
+<br><br>
+
+You have always been my biggest supporter,
+my strongest motivation,
+and my safest place.
+
+</p>
+
+<button onclick="showPage('chapter2')">
+Next →
+</button>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+<!-- CHAPTER 2 -->
+<div class="page" id="chapter2">
+<div class="card">
+
+<div class="book">
+
+<div class="photo">
+<img src="img 2.jpeg" alt="Photo 2">
+</div>
+
+<div class="message">
+
+<h1>📖 Chapter 2</h1>
+
+<h2>Lessons From My First Teacher</h2>
+
+<p>
+
+People know you as a teacher.
+
+<br><br>
+
+Your students know you as a guide.
+
+<br><br>
+
+But I know you as something even more special —
+my father.
+
+<br><br>
+
+Throughout my life,
+you taught me lessons that were never written in any textbook.
+
+</p>
+
+<button onclick="showPage('chapter3')">
+Next →
+</button>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+<!-- CHAPTER 3 -->
+<div class="page" id="chapter3">
+<div class="card">
+
+<div class="book">
+
+<div class="photo">
+<img src="img 3.jpeg" alt="Photo 3">
+</div>
+
+<div class="message">
+
+<h1>📖 Chapter 3</h1>
+
+<h2>Things You Taught Me</h2>
+
+<p>
+
+📚 Hard work speaks louder than words.
+
+<br><br>
+
+🌱 Stay humble no matter how successful I become.
+
+<br><br>
+
+💪 Stand strong during difficult times.
+
+<br><br>
+
+❤️ Kindness is one of the greatest strengths a person can have.
+
+</p>
+
+<button onclick="showPage('final')">
+Final Page →
+</button>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+<!-- FINAL PAGE -->
+<div class="page" id="final">
+<div class="card center">
+
+<div class="photo" style="height:300px;">
+<img src="img 4.jpeg" alt="Family">
+</div>
+
+<br>
+
+<h1>🏆 CERTIFICATE OF ACHIEVEMENT</h1>
+
+<p style="line-height:2;">
+
+This certifies that
+
+<br><br>
+
+<strong>Mr. Saravanan</strong>
+
+<br><br>
+
+has successfully completed
+
+<br><br>
+
+A Lifetime Of Being An Amazing Father
+
+<br><br>
+
+Awarded By
+
+<br>
+
+❤️ Thivisha ❤️
+
+</p>
+
+<br>
+
+<h2>Happy Birthday Appa ❤️</h2>
+
+</div>
+</div>
+
+<script>
+
+function showPage(id){
+
+document.querySelectorAll('.page').forEach(page=>{
+page.classList.remove('active');
+});
+
+document.getElementById(id).classList.add('active');
+
+window.scrollTo(0,0);
+
+}
+
+function unlock(){
+
+const pass=document.getElementById("pass").value;
+
+if(pass==="0406"){
+showPage("chapter1");
+}
+/*else if{
+    ( "HINT:Your Birthday[DDMM]❤️");
+}*/
+else{
+alert("Wrong Passcode 💔");
+}
+
+}
+
+</script>
+
+</body>
+</html>
